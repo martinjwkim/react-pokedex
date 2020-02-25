@@ -1,10 +1,11 @@
 import React from 'react';
 import Pokedex from './Pokedex';
+import './pokedex.css'
 
 function App() {
   return (
-    <div style={{textAlign: "center", color: "gray"}}>
-      <h1>Pokedex</h1>
+    <div className="pokedex-container">
+      <h1 className="pokedex-title">Pokedex</h1>
       <Pokedex/>
     </div>
   );
