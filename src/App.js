@@ -3,11 +3,9 @@ import Pokedex from './Pokedex';
 import './pokedex.css'
 
 function App() {
+  let pokemonResponse;
   return (
-    <div className="pokedex-container">
-      <h1 className="pokedex-title">Pokedex</h1>
-      <Pokedex/>
-    </div>
+    <Pokedex pokemonData={pokemonResponse}/>
   );
 }
 

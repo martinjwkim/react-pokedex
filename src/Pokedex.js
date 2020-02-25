@@ -1,21 +1,20 @@
 import React from 'react';
-import pokemonData from './pokemonData';
 import './pokedex.css'
+import pokemonData from './pokemonData';
+import Pokemon from './Pokemon'
 
-function Pokedex(props){
-  
+function Pokedex(props) {
+
   return (
-  <div>
-    {pokemonData.map(pokemonObj => 
-    <div key={pokemonObj.id} className="pokemon">
-      <h3 className="pokemon-name"> {pokemonObj.name} </h3>
-      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonObj.id}.png`} alt='pokemon'/>
-      <p> Type: {pokemonObj.type} </p>
-      <p> EXP: {pokemonObj.base_experience} </p>
+    <div className="pokedex-container">
+      <h1 className="pokedex-title">Pokedex</h1>
+      <div>
+        {props.pokemonData.map(pokemonObj => <Pokemon info={pokemonObj} key={pokemonObj.id}/>)}
+      </div>
     </div>
-    )}
-  </div>
   )
 }
+
+Pokedex.defaultProps = {pokemonData}
 
 export default Pokedex;
